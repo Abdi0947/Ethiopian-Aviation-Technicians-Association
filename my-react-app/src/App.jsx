@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
+import ChatBot from './components/ChatBot';
+import Gallery from './pages/Gallery';
 // import Events from './pages/Events';
 // import Membership from './pages/Membership';
 // import Contact from './pages/Contact';
@@ -20,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
             {/* <Route path="/events" element={<Events />} />
             <Route path="/membership" element={<Membership />} />
             <Route path="/contact" element={<Contact />} />
@@ -28,6 +31,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <ChatBot />
         <Toaster 
           position="top-right"
           toastOptions={{
