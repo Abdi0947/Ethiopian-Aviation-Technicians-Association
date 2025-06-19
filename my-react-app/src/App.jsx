@@ -7,9 +7,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import ChatBot from './components/ChatBot';
 import Gallery from './pages/Gallery';
+import { Contact } from './pages';
 // import Events from './pages/Events';
 // import Membership from './pages/Membership';
-// import Contact from './pages/Contact';
 // import Login from './pages/Login';
 // import Register from './pages/Register';
 
@@ -23,9 +23,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
             {/* <Route path="/events" element={<Events />} />
             <Route path="/membership" element={<Membership />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} /> */}
           </Routes>

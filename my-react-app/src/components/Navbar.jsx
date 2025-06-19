@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Plane } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Button from './Button';
+import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <Plane className="h-8 w-8 text-primary-600" />
+              <img src={logo} alt="EATA Logo" className="h-10 w-10 rounded-full object-cover border-2 border-primary-600 shadow" />
               <span className="text-xl font-bold text-gray-900">EATA</span>
             </Link>
           </div>

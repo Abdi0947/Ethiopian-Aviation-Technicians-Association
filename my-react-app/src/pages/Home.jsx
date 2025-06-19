@@ -15,6 +15,7 @@ import Card from '../components/Card';
 import EventCard from '../components/EventCard';
 import MemberCard from '../components/MemberCard';
 import Button from '../components/Button';
+import planeBg from '../assets/plane.jpg';
 
 const Home = () => {
   // Mock data for upcoming events
@@ -126,167 +127,172 @@ const Home = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Features Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Join EATA?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the benefits of being part of Ethiopia's premier aviation technicians association
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="text-center">
-                <div className="flex justify-center mb-4">
-                  <feature.icon className="h-12 w-12 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-primary-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">500+</div>
-              <div className="text-primary-200">Active Members</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">50+</div>
-              <div className="text-primary-200">Certifications</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">20+</div>
-              <div className="text-primary-200">Events/Year</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold mb-2">15+</div>
-              <div className="text-primary-200">Years Experience</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-12">
-            <div>
+      <div
+        className="space-y-8 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${planeBg})` }}
+      >
+        {/* Features Section */}
+        <section className="py-16 bg-white rounded-xl shadow p-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Upcoming Events
+                Why Join EATA?
               </h2>
-              <p className="text-xl text-gray-600">
-                Don't miss our upcoming events and training sessions
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover the benefits of being part of Ethiopia's premier aviation technicians association
               </p>
             </div>
-            <Button 
-              variant="outline" 
-              size="lg"
-              as={Link}
-              to="/events"
-              className="hidden md:flex"
-            >
-              View All Events
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <Card key={index} className="text-center">
+                  <div className="flex justify-center mb-4">
+                    <feature.icon className="h-12 w-12 text-primary-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {feature.description}
+                  </p>
+                </Card>
+              ))}
+            </div>
           </div>
+        </section>
 
-          <div className="text-center mt-8 md:hidden">
-            <Button 
-              variant="outline" 
-              size="lg"
-              as={Link}
-              to="/events"
-            >
-              View All Events
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+        {/* Stats Section */}
+        <section className="py-16 bg-primary-700 text-white rounded-xl shadow p-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-3xl md:text-4xl font-bold mb-2">500+</div>
+                <div className="text-primary-200">Active Members</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold mb-2">50+</div>
+                <div className="text-primary-200">Certifications</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold mb-2">20+</div>
+                <div className="text-primary-200">Events/Year</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold mb-2">15+</div>
+                <div className="text-primary-200">Years Experience</div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Featured Members Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Featured Members
+        {/* Upcoming Events Section */}
+        <section className="py-16 bg-white rounded-xl shadow p-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center mb-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Upcoming Events
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Don't miss our upcoming events and training sessions
+                </p>
+              </div>
+              <Button 
+                variant="outline" 
+                size="lg"
+                as={Link}
+                to="/events"
+                className="hidden md:flex"
+              >
+                View All Events
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {upcomingEvents.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </div>
+
+            <div className="text-center mt-8 md:hidden">
+              <Button 
+                variant="outline" 
+                size="lg"
+                as={Link}
+                to="/events"
+              >
+                View All Events
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Members Section */}
+        <section className="py-16 bg-gray-50 rounded-xl shadow p-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Featured Members
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Meet some of our outstanding members who are making a difference in Ethiopian aviation
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredMembers.map((member) => (
+                <MemberCard key={member.id} member={member} />
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <Button 
+                variant="primary" 
+                size="lg"
+                as={Link}
+                to="/membership"
+              >
+                Join Our Community
+                <Users className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 bg-primary-700 text-white rounded-xl shadow p-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Advance Your Aviation Career?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet some of our outstanding members who are making a difference in Ethiopian aviation
+            <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
+              Join EATA today and become part of a community dedicated to excellence in aviation maintenance and safety.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                variant="primary" 
+                size="lg"
+                className="bg-white text-primary-700 hover:bg-gray-100"
+                as={Link}
+                to="/membership"
+              >
+                Become a Member
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-primary-700"
+                as={Link}
+                to="/contact"
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredMembers.map((member) => (
-              <MemberCard key={member.id} member={member} />
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button 
-              variant="primary" 
-              size="lg"
-              as={Link}
-              to="/membership"
-            >
-              Join Our Community
-              <Users className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Advance Your Aviation Career?
-          </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-            Join EATA today and become part of a community dedicated to excellence in aviation maintenance and safety.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="primary" 
-              size="lg"
-              className="bg-white text-primary-700 hover:bg-gray-100"
-              as={Link}
-              to="/membership"
-            >
-              Become a Member
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary-700"
-              as={Link}
-              to="/contact"
-            >
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };
